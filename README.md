@@ -23,8 +23,8 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [X] Heavily improved UI with Bootstrap and Font Awesome.
-  [X] Implemented responsive UI when incorrect values and/or no radio button is selected through JQuery.
-  [X] Wrote javascript functions to implement alerts.
+* [X] Implemented responsive UI when incorrect values and/or no radio button is selected through JQuery.
+* [X] Wrote javascript functions to implement alerts.
 
 ## Video Walkthrough
 
