@@ -17,12 +17,14 @@ The following **required** functionality is complete:
 * [X] Submitted form values are retained when errors or results are shown.
 
 The following **optional** features are implemented:
-* [ ] Add support for custom tip percentage
-* [ ] Add support for splitting the tip and total
+* [X] Add support for custom tip percentage.
+* [ ] Add support for splitting the tip and total.
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the functionality!
+* [X] Heavily improved UI with Bootstrap and Font Awesome.
+  [X] Implemented responsive UI when incorrect values and/or no radio button is selected through JQuery.
+  [X] Wrote javascript functions to implement alerts.
 
 ## Video Walkthrough
 
@@ -36,7 +38,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
-* This was my first time using PHP, in addition to making a web application. Besides learning the syntax of PHP, the most significant challenge I faced was learning when exactly data was submitted, processed, and sent back to the client. For instance, I intially had trouble preventing the calculator from outputting a tip and total amount if the bill subtotal and/or the tip percentage wasn't selected. I solved this problem by learning to process the form only when the server's request method was of type "POST" in addition to learning when to use "isset()" and "empty()". Another significant challenge I faced was having to figure out how to output the radio buttons in a PHP loop.
+* This was my first time using PHP, in addition to making a web application. Besides learning the syntax of PHP, JQuery, and Javascript, the most significant challenge I faced was learning when exactly data was submitted, processed, and sent back to the client. For instance, I intially had trouble preventing the calculator from outputting a tip and total amount if the bill subtotal and/or the tip percentage wasn't selected. I solved this problem by learning to process the form only when the server's request method was of type "POST" in addition to learning when to use "isset()" and "empty()". Another significant challenge I faced was having to figure out how to output the radio buttons in a PHP loop.
 
 ## License
 
