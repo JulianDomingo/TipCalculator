@@ -18,12 +18,12 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 * [X] Add support for custom tip percentage.
-* [ ] Add support for splitting the tip and total.
+* [X] Add support for splitting the tip and total.
 
 The following **additional** features are implemented:
 
 * [X] Heavily improved UI with Bootstrap and Font Awesome.
-* [X] Implemented responsive UI when incorrect values and/or no radio button is selected through JQuery.
+* [X] Implemented responsive UI with JQuery.
 * [X] Wrote javascript functions to implement alerts.
 
 ## Video Walkthrough

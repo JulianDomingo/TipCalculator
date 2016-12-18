@@ -6,11 +6,13 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=VT323">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Abel">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="css/basic-template.css" rel="stylesheet">
 
         <title>Tip Calculator</title>
 
         <style>
+            #ex1Slider .slider-selection {
+                background: #BABABA;
+            }
             #customTip {
                 display: none;
                 margin-top: 10px;
@@ -24,6 +26,22 @@
             }
             #noRadioSelected {
                 margin-top: 10px;
+            }
+            .splitHeader {
+                float: left;
+            }
+            .party {
+                float: left;
+                position: relative;
+                top: 10px;
+                left: 240px;
+            }
+            .splitNum {
+                float: left;
+                position: relative;
+                top: 3px;
+                left: 242px;
+                font-weight: bold;
             }
             h2 {
                 font-family: VT323, Monospace;
@@ -82,6 +100,7 @@
                                 break;
 						}
         			}
+                    $split_party = $_POST['splitRange'];
         		}
         	?>
 
@@ -93,12 +112,14 @@
                     </ul>
                 </div>
             </nav>
+
             <div class="container">
                 <div id="#header" class="jumbotron">
                     <h2>Tip Calculator</h2>
                     <p>A simple web application demonstrating form processing. Server-side written in PHP, design in HTML and CSS.</p>
                 </div>  
             </div> 
+
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -159,6 +180,14 @@
                                     <strong>Hold your horses! </strong>Don't forget to select a tipping choice.
                                 </div>
 
+                                <br />
+                                <div class="sameline">
+                                    <div class="splitHeader"><label style="margin-top: 10px">Split the Tip!</label></div>
+                                    <div class="party">Party Number: </div>
+                                    <div class="splitNum"><output id="splitRangeOutput">1</output></div>
+                                </div>
+                                <input type="range" name="splitRange" id="splitRange" min="1" max="100" value="1" step="1" oninput="splitRangeOutput.value = splitRange.value">
+
                                 <div style="padding-top: 10px;" name="submit" class="col-xs-44"><button type="submit" class="btn btn-primary">Submit</button></div>
                             </form>
                         </div>
@@ -170,16 +199,21 @@
                                 $tip = $tip_percentage * $subtotal;
                             ?>
                                 <div id="result">
+                                    <?php
+                                        if ($split_party > 1) { 
+                                            echo "You split the bill with ", $split_party, " people.", "<br />";
+                                        }
+                                    ?>
                                     <?php 
                                         if ($is_custom_tip) { 
                                             echo "Custom Tip Percentage: "; 
-                                            echo number_format($tip_percentage * 100, 2); 
+                                            echo number_format(floatval(floatval($tip_percentage * 100) / floatval($split_party)), 2); 
                                             echo "%";
                                             echo "<br />";
                                         }
                                     ?>
-                                    <?php echo "Tip Amount: $"; echo number_format($tip, 2); echo "<br />" ?>
-                                    <?php echo "Total: $"; echo number_format($total, 2); ?>
+                                    <?php echo "Tip Amount: $"; echo number_format(floatval(floatval($tip) / floatval($split_party)), 2); echo "<br />" ?>
+                                    <?php echo "Total: $"; echo number_format(floatval(floatval($total) / floatval($split_party)), 2); ?>
                                 </div> 
                             <?php } ?>
                         </div> 
