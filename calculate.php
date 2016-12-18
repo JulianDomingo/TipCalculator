@@ -17,6 +17,19 @@
                 display: none;
                 margin-top: 10px;
             }
+            .navbar-nav > li > a { 
+                padding-top: 20px !important; 
+                padding-bottom: 20px !important; 
+            }
+            .navbar {
+                min-height: 32px !important;
+            }
+            #about {
+                padding: 5px 5px 5px 5px;
+                font-family: VT323, Monospace;
+                font-size: 25px;
+
+            }
             #result {
                 padding-left: 4px;
                 border-left: 4px solid #29a3a3;
@@ -104,11 +117,14 @@
         		}
         	?>
 
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a style="color: white;" class="navbar-brand" href="#">Tip Calculator</a>
+                    </div>
                     <ul class="nav navbar-nav">
-                        <li id="navBarHome" class="active"><a href="#"><i class="fa fa-home" aria-hidden="true">Home</i></a></li>
-                        <li><a href="#"><i class="fa fa-info-circle">About</i></a></li>
+                        <li id="navBarHome" class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"> Home</i></a></li>
+                        <li><a href="#about"><i class="fa fa-info-circle"> About</i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -218,6 +234,11 @@
                             <?php } ?>
                         </div> 
                     </div>
+                </div>
+            </div>
+            <div class="container">
+                <div id="about" class="jumbotron">
+                    <div class="text-center">Learn more on my <a href="https://github.com/JulianDomingo/TipCalculator"><i class="fa fa-github"></i></a>!</div>
                 </div>
             </div>
         </div>
